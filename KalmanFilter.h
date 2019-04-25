@@ -1,14 +1,9 @@
-#ifndef _KALMANFILTER_H_
-#define _KALMANFILTER_H_
+#ifndef KalmanFilter_h
+#define KalmanFilter_h
 
-#if (ARDUINO >= 100)
- #include "Arduino.h"
-#else
- #include "WProgram.h"
-#endif
+#include "Arduino.h"
 
 class KalmanFilter {
-
 public:
 	KalmanFilter(double inputError, double estimatedError, double processNoise);
 	void in(double input);
@@ -30,7 +25,7 @@ private:
 	double _output;
 };
 
-#endif // _KALMANFILTER_H_
+#endif
 
 
 
