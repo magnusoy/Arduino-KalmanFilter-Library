@@ -1,3 +1,4 @@
+
 #include "KalmanFilter.h"
 #include "math.h"
 
@@ -7,7 +8,9 @@ KalmanFilter::KalmanFilter(double inputError, double estimatedError, double proc
 	_processNoise = processNoise;
 }
 
-void KalmanFilter::in(double input) { _input = input; }
+void KalmanFilter::in(double input) {
+	_input = input;
+}
 
 double KalmanFilter::out() {
 	_kalmanGain = _estimatedError / (_estimatedError + _inputError);
@@ -18,12 +21,14 @@ double KalmanFilter::out() {
 	return _currentEstimate;
 }
 
-void KalmanFilter::setInputError(double inputError) {_inputError = inputError; }
+void KalmanFilter::setInputError(double inputError) {
+	_inputError = inputError;
+}
 
-void KalmanFilter::setEstimateError(double estimatedError) { _estimatedError = estimatedError; }
+void KalmanFilter::setEstimateError(double estimatedError) {
+	_estimatedError = estimatedError;
+}
 
-void KalmanFilter::setProcessNoise(double processNoise) { _processNoise = processNoise; }
-
-double KalmanFilter::getKalmanGain() { return _kalmanGain; }
-
-double KalmanFilter::getEstimateError() { return _estimatedError; }
+void KalmanFilter::setProcessNoise(double processNoise) {
+	_processNoise = processNoise;
+}
